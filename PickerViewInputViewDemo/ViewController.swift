@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var textFieldAssists: UITextField!
     
+    @IBOutlet weak var labelResults: UILabel!
+    
     // MARK: Properties
     
     // Create a list (aka an array) of all the values that should show in the points picker view
@@ -159,7 +161,30 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-
-
+    // This is going to get the values from all the text fields and then report the results.
+    @IBAction func calculateResults(_ sender: Any) {
+        
+        // Unwrap all the optional strings that are the text properties for each text field
+        guard let points = textFieldPoints.text else {
+            labelResults.text = "Error."
+            return
+        }
+        guard let goals = textFieldGoals.text else {
+            labelResults.text = "Error."
+            return
+        }
+        guard let assists = textFieldAssists.text else {
+            labelResults.text = "Error."
+            return
+        }
+        
+        // Calculate the uberPlayer stat
+        let uberPlayerValue = (Float(points)! + Float(goals)!) / Float(assists)!
+        
+        // Assemble all the information into a String and then assign it to the label for the results
+        labelResults.text = "The player had \(points) points, and \(goals) goals, and \(assists) assists. The player has an uber value of \(uberPlayerValue)"
+        
+    }
+    
 }
 

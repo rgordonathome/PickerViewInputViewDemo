@@ -88,21 +88,44 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWN-Ma-fIS" userLabel="buttonCalculate">
+                                <rect key="frame" x="352" y="179" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateResults:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfF-bl-62m"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q23-ZG-JDb" userLabel="labelResults">
+                                <rect key="frame" x="20" y="217" width="728" height="266"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="266" id="0Db-qj-1UN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Q23-ZG-JDb" firstAttribute="trailing" secondItem="K9F-DH-xim" secondAttribute="trailing" id="9p4-bc-odv"/>
                             <constraint firstItem="qnW-wq-Ajp" firstAttribute="top" secondItem="eAh-yt-1zc" secondAttribute="bottom" constant="20" id="CWI-wV-Nu3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="qnW-wq-Ajp" secondAttribute="leading" id="GmU-s4-WbR"/>
+                            <constraint firstItem="JWN-Ma-fIS" firstAttribute="top" secondItem="K9F-DH-xim" secondAttribute="bottom" constant="8" id="Gzf-SO-6VB"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="H1N-jG-hc0"/>
                             <constraint firstItem="K9F-DH-xim" firstAttribute="top" secondItem="qnW-wq-Ajp" secondAttribute="bottom" constant="21" id="Jko-Fy-jJl"/>
+                            <constraint firstItem="Q23-ZG-JDb" firstAttribute="top" secondItem="JWN-Ma-fIS" secondAttribute="bottom" constant="8" symbolic="YES" id="MQz-KQ-G8n"/>
+                            <constraint firstItem="Q23-ZG-JDb" firstAttribute="leading" secondItem="K9F-DH-xim" secondAttribute="leading" id="Mwx-iX-S9e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JWN-Ma-fIS" secondAttribute="trailing" constant="332" id="ODg-jJ-EwU"/>
                             <constraint firstItem="K9F-DH-xim" firstAttribute="leading" secondItem="qnW-wq-Ajp" secondAttribute="leading" id="Roc-HC-k1f"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WlM-Ut-akx"/>
+                            <constraint firstItem="JWN-Ma-fIS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="332" id="Xzu-Ml-izr"/>
                             <constraint firstItem="K9F-DH-xim" firstAttribute="trailing" secondItem="qnW-wq-Ajp" secondAttribute="trailing" id="bUY-af-bg8"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="fIQ-xq-ocM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qnW-wq-Ajp" secondAttribute="trailing" id="poZ-Fq-qat"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelResults" destination="Q23-ZG-JDb" id="tOk-q7-CwB"/>
                         <outlet property="textFieldAssists" destination="m55-KC-wHn" id="kYY-aN-PQQ"/>
                         <outlet property="textFieldGoals" destination="kfv-b2-LGD" id="sGG-Li-uxy"/>
                         <outlet property="textFieldPoints" destination="B5H-oz-ksT" id="PdZ-6o-A4C"/>
