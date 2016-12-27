@@ -45,15 +45,42 @@
                                     <constraint firstItem="O6h-07-n1T" firstAttribute="top" secondItem="eAh-yt-1zc" secondAttribute="top" id="gRF-Hr-9I7"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-wq-Ajp" userLabel="stackViewGoals">
+                                <rect key="frame" x="16" y="90" width="288" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN0-5Z-YTo" userLabel="labelGoals">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="skb-l9-SnJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kfv-b2-LGD" userLabel="textFieldGoals">
+                                        <rect key="frame" x="70" y="0.0" width="218" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DN0-5Z-YTo" firstAttribute="top" secondItem="qnW-wq-Ajp" secondAttribute="top" id="ctC-qC-NJh"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qnW-wq-Ajp" firstAttribute="top" secondItem="eAh-yt-1zc" secondAttribute="bottom" constant="20" id="CWI-wV-Nu3"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="qnW-wq-Ajp" secondAttribute="leading" id="GmU-s4-WbR"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="H1N-jG-hc0"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="eAh-yt-1zc" secondAttribute="leading" id="WlM-Ut-akx"/>
+                            <constraint firstItem="eAh-yt-1zc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WlM-Ut-akx"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="fIQ-xq-ocM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qnW-wq-Ajp" secondAttribute="trailing" id="poZ-Fq-qat"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="textFieldGoals" destination="kfv-b2-LGD" id="sGG-Li-uxy"/>
                         <outlet property="textFieldPoints" destination="B5H-oz-ksT" id="PdZ-6o-A4C"/>
                     </connections>
                 </viewController>
