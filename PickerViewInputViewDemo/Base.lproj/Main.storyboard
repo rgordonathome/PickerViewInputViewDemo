@@ -68,13 +68,36 @@
                                     <constraint firstItem="DN0-5Z-YTo" firstAttribute="top" secondItem="qnW-wq-Ajp" secondAttribute="top" id="ctC-qC-NJh"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K9F-DH-xim" userLabel="stackViewAssists">
+                                <rect key="frame" x="20" y="141" width="728" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fva-of-zfZ" userLabel="labelAssists">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="FRd-2w-R3o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m55-KC-wHn" userLabel="textFieldAssists">
+                                        <rect key="frame" x="70" y="0.0" width="658" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qnW-wq-Ajp" firstAttribute="top" secondItem="eAh-yt-1zc" secondAttribute="bottom" constant="20" id="CWI-wV-Nu3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="qnW-wq-Ajp" secondAttribute="leading" id="GmU-s4-WbR"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="H1N-jG-hc0"/>
+                            <constraint firstItem="K9F-DH-xim" firstAttribute="top" secondItem="qnW-wq-Ajp" secondAttribute="bottom" constant="21" id="Jko-Fy-jJl"/>
+                            <constraint firstItem="K9F-DH-xim" firstAttribute="leading" secondItem="qnW-wq-Ajp" secondAttribute="leading" id="Roc-HC-k1f"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WlM-Ut-akx"/>
+                            <constraint firstItem="K9F-DH-xim" firstAttribute="trailing" secondItem="qnW-wq-Ajp" secondAttribute="trailing" id="bUY-af-bg8"/>
                             <constraint firstItem="eAh-yt-1zc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="fIQ-xq-ocM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qnW-wq-Ajp" secondAttribute="trailing" id="poZ-Fq-qat"/>
                         </constraints>
@@ -86,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.875" y="138.75"/>
+            <point key="canvasLocation" x="136.71875" y="138.28125"/>
         </scene>
     </scenes>
 </document>
