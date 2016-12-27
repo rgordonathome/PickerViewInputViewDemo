@@ -59,6 +59,22 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        // A touch actually has many points (since a finger is large) so
+        // only proceed if we can get the first touch
+        guard let touch = touches.first else {
+            return
+        }
+        
+        // Determine what view the touch was made on, if something other than a picker view, dismiss the picker view
+        if (touch.view as? UIPickerView) == nil {
+            // It was not a picker view, so dismiss the picker view sheet
+            self.view.endEditing(true)
+        }
+
+    }
+    
     // MARK: UIPickerView
     
     // This tells the picker view how many components it has
