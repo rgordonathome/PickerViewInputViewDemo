@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var textFieldGoals: UITextField!
     
+    @IBOutlet weak var textFieldAssists: UITextField!
+    
     // MARK: Properties
     
     // Create a list (aka an array) of all the values that should show in the points picker view
@@ -22,6 +24,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     // Create a list (aka an array) of all the values that should show in the points picker view
     var goalsOptions = ["0", "1", "2", "3"]
+
+    // Create a list for assists
+    var assistsOptions = ["0", "1", "2", "3", "4", "5"]
     
     // MARK: View Controller
     override func viewDidLoad() {
@@ -51,6 +56,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
         // Define a tag so that we can distinguish one picker from another later on
         goalsPicker.tag = 2
+        
+        // Create a picker for the number of assists text field
+        let assistsPicker = UIPickerView()
+        
+        // Make the view controller the delegate for the assists picker
+        assistsPicker.delegate = self
+        
+        // Make the goals picker appear when someone clicks on (or sets focus to) the assists text field
+        textFieldAssists.inputView = assistsPicker
+        
+        // Define a unique tag for the assists picker
+        assistsPicker.tag = 3
         
     }
 
@@ -83,6 +100,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             return 1
         } else if pickerView.tag == 2 {
             return 1
+        } else if pickerView.tag == 3 {
+            return 1
         } else {
             return 1
         }
@@ -97,6 +116,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         } else if pickerView.tag == 2 {
             // Set the number of rows in the picker view to the number of elements in the goalsOptions array
             return goalsOptions.count
+        } else if pickerView.tag == 3 {
+            // Set the number of rows in the picker view to the number of elements in the assistsOptions array
+            return assistsOptions.count
         } else {
             return 0
         }
@@ -107,11 +129,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
         // Return the value for the current row, using the pointsOption array as the data source
         if pickerView.tag == 1 {
-            // Set the number of rows in the picker view to the number of elements in the pointsOptions array
+            // Set the contents of the picker to the values in the pointsOptions array
             return pointsOptions[row]
         } else if pickerView.tag == 2 {
-            // Set the number of rows in the picker view to the number of elements in the goalsOptions array
+            // Set the contents of the picker to the values in the goalsOptions array
             return goalsOptions[row]
+        } else if pickerView.tag == 3 {
+            // Set the contents of the picker to the values  in the assistsOptions array
+            return assistsOptions[row]
         } else {
             return nil
         }
@@ -127,6 +152,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         } else if pickerView.tag == 2 {
             // Set the number of rows in the picker view to the number of elements in the goalsOptions array
             textFieldGoals.text = goalsOptions[row]
+        } else if pickerView.tag == 3 {
+            // Set the number of rows in the picker view to the number of elements in the assistsOptions array
+            textFieldAssists.text = assistsOptions[row]
         }
         
     }
